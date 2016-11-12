@@ -18,7 +18,7 @@ The sensor networks lab provides opportunity for gaining hands-on experience in 
 The lab consists of a "bootcamp" event and 6 additional Labs. In the "bootcamp" the TinyOS toolchain is installed and tested with simple demo applications. The following lab sessions are devoted to particular aspects of sensor network hardware and software stack like sensing, actuation, IPv6-based networking, etc. The lab ends with group mini-project work.
 
 # Lab Units
-1. Lab1: Toolchain and demo apps
+1. [Lab1: Toolchain and demo apps](https://github.com/sulxxy/Course_Ad_Hoc_and_Sensor_Networks/tree/master/Lab1_Toolchain_and_Demo)
 1. Lab2: TinyOS basics and GPIOs
 1. Lab3: Analog signals
 1. Lab4: UDP communication

@@ -4,16 +4,14 @@ According to the project web-site: “ TinyOS is an open-source operating system
 This Lab is comprised of the following activities.  In sectio n 1.1 we will install TinyOS, utilizing a custom install script that simplifies th e task. In section 1.2 we will compile and install software on 1) a border router nod e that is connected via cable with the PC and 2) a wireless node, which can be acces sed through the border router. Utilizing a simple shell-like interface o n the node we will then explore the network connectivity and the services that are offered by the wireless node.
 
 ## Installation of TinyOS
-Follow these steps to install a TinyOS tool-chain onto your m achine from the Internet:
 1. First download the install script from the course ISIS website.
-2. Make the script executable by running the following in a te rminal:
-> $ chmod +x ./tos-install-v2.sh
+2. Make the script executable by running the following in a terminal:
+   > $ chmod +x ./tos-install-v2.sh
 
 3. Execute it like this
-> $ ./tos-install-v2.sh <channel number>
+   > $ ./tos-install-v2.sh <channel number>
 
-The script has one parameter, which is the channel that will b e used for the
-radio. We will allocate a channel number for every group in th e class, in order to avoid accidental cross-group packets.
+   The script has one parameter, which is the channel that will b e used for the radio. We will allocate a channel number for every group in th e class, in order to avoid accidental cross-group packets.
 4. Test your installation by navigating to <home>/wsnpr/tinyos-main/apps/Blink and executing make telosb . If everything is set up correctly, you should see output similar to
 <pre><code>
 [INFO] script
@@ -44,8 +42,9 @@ In this case the bootstrap loader (bsl) will install the image on the first node
 
 will install the image on the sensor node that is connected to the USB as the device usbdevice , e.g. /dev/ttyUSB0.
 
-All of those commands have to be run from the directory where th e application Makefile is located. To show which USB port your mote is connect ed to, type
+All of those commands have to be run from the directory where th e application Makefile is located. To show which USB port your mote is connected to, type
 > $ motelist
+
 This will list all nodes currently connected via USB and their corresponding device names.
 
 ##  Hands-On with PppRouter and Showcase
@@ -60,17 +59,16 @@ This will install the app and the Node ID will be 2.
 
 ###  Ping and UDP-shell
 1. Now start a PPP tunnel between the host PC and the PppRouter a pplication on the border router node by typing:
-> $ tos-pppd start 0 
-
-(if the PppRouter node is connected to /dev/ttyUSB0 ).
-This script can be found in the <home>/wsnpr/util folder. It wraps the calls to start pppd and to configure the interface. By default only link local addresses are available (fe80::). So it adds the fec0:: (sit e local addresses) to the ppp0 interface. You can stop pppd by executing
-> $ tos-pppd kill
-
-The output of pppd can be found in /var/log/pppd-tos .
+   > $ tos-pppd start 0 
+   
+   (if the PppRouter node is connected to /dev/ttyUSB0 ).
+   This script can be found in the <home>/wsnpr/util folder. It wraps the calls to start pppd and to configure the interface. By default only link local addresses are available (fe80::). So it adds the fec0:: (sit e local addresses) to the ppp0 interface. You can stop pppd by executing
+   > $ tos-pppd kill
+   
+   The output of pppd can be found in /var/log/pppd-tos .
 2. Use the command
-> $ ifconfig ppp0
-
-to see that the above command has created a new network interface on the host system called ppp0 .
+   > $ ifconfig ppp0
+   to see that the above command has created a new network interface on the host system called ppp0 .
 3. Try to connect to the Showcase node (if your network addres s is fec0 (default) and the interface ID is the Node ID of the node, in this case 2):
 **ping6 fec0::2** pings the node
 **nc6 -u fec0::2 7** starts a simple UDP Echo application: enter any text and it will be echoed back to you by the remote node.

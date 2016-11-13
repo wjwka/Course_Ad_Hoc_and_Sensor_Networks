@@ -1,0 +1,7 @@
+# Lab2: TinyOS Basics
+In this lab you will learn the basic concepts of TinyOS programming.  After this lab you will be able to write simple TinyOS applications and have deeper understanding of the main TinyOS concepts like components, modules, con gurations and interfaces.
+
+# Interfaces, Modules and Con gurations
+In the previous lab we have already installed the Blink application.  Blink is not part of the additional Lab applications, and resides in tinyos-main/apps/Blink. In the following, this very simple application, will serve as basis for introducing the  most  basic  TinyOS  concepts,  thus  helping  you  to  write  your  own  TinyOS applications:
+## Components -- Signature and Implementation
+TinyOS applications are written in nesC and built by the nescc compiler.  A nesC application consists of one or more components .  A component can be a module (in this example the BlinkC.nc component is module) or a con guration (in this example the BlinkApp.nc is a con guration).  Each component is comprised of two blocks:  a signature ( rst block) and the an implementation (second block).  As an example, let's look at the internal structure of the BlinkC.nc component:

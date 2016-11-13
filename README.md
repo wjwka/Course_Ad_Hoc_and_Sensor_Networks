@@ -4,7 +4,8 @@ Wireless sensor networks are large-scale networks of nodes comprised of sensing 
 Sensor networks differ from "traditional" wireless networks in several aspects, most importantly in their resource constrained nature. The sensor nodes are typically severely restricted in terms of memory, processing capacity and energy budget leading to the need for careful design of the node system software and protocol stack. These novel system solutions, driven by the specific nature of the sensor networks as a platform, are the focus of our interest in this course.
 
 # Lecture Topics
-1. Preliminaries, Intro, Network architecture, Node architecture
+1. [Network architecture](https://github.com/sulxxy/Course_Ad_Hoc_and_Sensor_Networks/tree/master/Network_Architectures)
+2. Node architecture
 2. Operating systems, TinyOS
 2. Physical layer, Link layer
 2. Naming and addressing, Medium access control

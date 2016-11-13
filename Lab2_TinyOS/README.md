@@ -77,7 +77,7 @@ implementation
 </pre></code>
 The Timer interface, for example, offers three commands and one event:
 <pre><code>
-#include "Timer.h"
+\#include "Timer.h"
 interface Timer<precision_tag>
 {
 	command void startPeriodic(uint32_t dt);

@@ -5,8 +5,8 @@ Sensor networks differ from "traditional" wireless networks in several aspects, 
 
 # Lecture Topics
 1. [Network architecture](https://github.com/sulxxy/Course_Ad_Hoc_and_Sensor_Networks/tree/master/Network_Architectures)
-2. Node architecture
-2. Operating systems, TinyOS
+2. [Node architecture](https://github.com/sulxxy/Course_Ad_Hoc_and_Sensor_Networks/tree/master/Node_Architectures)
+2. [Operating systems, TinyOS](https://github.com/sulxxy/Course_Ad_Hoc_and_Sensor_Networks/tree/master/TinyOS)
 2. Physical layer, Link layer
 2. Naming and addressing, Medium access control
 2. Routing
@@ -20,7 +20,7 @@ The lab consists of a "bootcamp" event and 6 additional Labs. In the "bootcamp" 
 
 # Lab Units
 1. [Lab1: Toolchain and demo apps](https://github.com/sulxxy/Course_Ad_Hoc_and_Sensor_Networks/tree/master/Lab1_Toolchain_and_Demo)
-1. Lab2: TinyOS basics and GPIOs
+1. [Lab2: TinyOS basics and GPIOs](https://github.com/sulxxy/Course_Ad_Hoc_and_Sensor_Networks/tree/master/Lab2_TinyOS)
 1. Lab3: Analog signals
 1. Lab4: UDP communication
 1. Lab5: IPv6 multicast

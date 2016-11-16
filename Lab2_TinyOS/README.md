@@ -1,5 +1,14 @@
 # Lab2: TinyOS Basics
-In this lab you will learn the basic concepts of TinyOS programming.  After this lab you will be able to write simple TinyOS applications and have deeper understanding of the main TinyOS concepts like components, modules, con gurations and interfaces.
+## Group Information
+1. Group Number: 9
+2. Group Members:
+  * Hui Yin 
+  * JiaPeng Li
+  * JiaWen Wang
+  * Zhiwei Liu
+
+## Goals
+In this lab you will learn the basic concepts of TinyOS programming. After this lab you will be able to write simple TinyOS applications and have deeper understanding of the main TinyOS concepts like components, modules, configurations and interfaces.
 
 # Interfaces, Modules and Configurations
 In the previous lab we have already installed the Blink application.  Blink is not part of the additional Lab applications, and resides in tinyos-main/apps/Blink. In the following, this very simple application, will serve as basis for introducing the  most  basic  TinyOS  concepts,  thus  helping  you  to  write  your  own  TinyOS applications:

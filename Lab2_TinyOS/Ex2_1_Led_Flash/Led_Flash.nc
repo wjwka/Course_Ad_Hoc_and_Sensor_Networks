@@ -13,7 +13,7 @@ implementation{
   	event void Timer0.fired()
   	{
     		dbg("BlinkC", "Timer 0 fired @ %s.\n", sim_time_string());
-		if(flag%5)
+		if(flag%15)
     			call Leds.led0Off();
 		else
 			call Leds.led0On();

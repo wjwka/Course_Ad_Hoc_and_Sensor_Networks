@@ -1,8 +1,13 @@
+#include "hardware.h"
+
 configuration PlatIOC{
 }
 implementation{
 	components HplMsp430GeneralIOC;
 	components PlatIOP, MainC;
+	components new Msp430GpioC() as Led0;
+	components new Msp430GpioC() as Led1;
+	components new Msp430GpioC() as Led2;
 	components new TimerMilliC() as Timer0;
 	components new TimerMilliC() as Timer1;
 	components new TimerMilliC() as Timer2;
@@ -10,7 +15,10 @@ implementation{
 	PlatIOP.Timer0 -> Timer0;
 	PlatIOP.Timer1 -> Timer1;
 	PlatIOP.Timer2 -> Timer2;
-	PlatIOP.Pin0 -> HplMsp430GeneralIOC.Port54;
-	PlatIOP.Pin1 -> HplMsp430GeneralIOC.Port55;
-	PlatIOP.Pin2 -> HplMsp430GeneralIOC.Port56;
+	PlatIOP.Pin0 -> Led0;
+	PlatIOP.Pin1 -> Led1;
+	PlatIOP.Pin2 -> Led2;
+	Led0 -> HplMsp430GeneralIOC.Port54;
+	Led1 -> HplMsp430GeneralIOC.Port55;
+	Led2 -> HplMsp430GeneralIOC.Port56;
 }

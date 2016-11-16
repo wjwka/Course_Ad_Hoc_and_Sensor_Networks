@@ -6,9 +6,9 @@ module PlatIOP {
 		interface Timer<TMilli> as Timer0;
 		interface Timer<TMilli> as Timer1;
 		interface Timer<TMilli> as Timer2;
-		interface HplMsp430GeneralIO as Pin0;
-		interface HplMsp430GeneralIO as Pin1;
-		interface HplMsp430GeneralIO as Pin2;
+		interface GeneralIO as Pin0;
+		interface GeneralIO as Pin1;
+		interface GeneralIO as Pin2;
 	}
 }
 implementation{

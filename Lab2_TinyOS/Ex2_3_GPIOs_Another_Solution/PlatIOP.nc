@@ -6,9 +6,9 @@ module PlatIOP {
 		interface Timer<TMilli> as Timer0;
 		interface Timer<TMilli> as Timer1;
 		interface Timer<TMilli> as Timer2;
-		interface GeneralIO as Pin0;
-		interface GeneralIO as Pin1;
-		interface GeneralIO as Pin2;
+		interface GeneralIO as led0;
+		interface GeneralIO as led1;
+		interface GeneralIO as led2;
 	}
 }
 implementation{
@@ -19,23 +19,23 @@ implementation{
 	}
 
 	event void Timer0.fired(){
-		if(call Pin0.get())
-			call Pin0.set();
+		if(call led0.get())
+			call led0.clr();
 		else
-			call Pin0.clr();
+			call led0.set();
 	}
 
 	event void Timer1.fired(){
-		if(call Pin1.get())
-			call Pin1.set();
+		if(call led1.get())
+			call led1.clr();
 		else
-			call Pin1.clr();
+			call led1.set();
 	}
 
 	event void Timer2.fired(){
-		if(call Pin2.get())
-			call Pin2.set();
+		if(call led2.get())
+			call led2.clr();
 		else
-			call Pin2.clr();
+			call led2.set();
 	}
 }

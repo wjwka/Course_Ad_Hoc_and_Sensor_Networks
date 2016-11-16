@@ -14,6 +14,7 @@ A configuration shows how components are connected(wired) in a program.
 ## Wiring
 Wiring(->) means connecting providers and users together. For example, module A uses an interface called Leds. However, if we don't declare the provider of the interface Leds, the commands in Leds would be undefined. So we declare a provider called LedsC. Now, we can use 
 > A.Leds -> LedsC
+
 to connect LedsC(provider) with A(User).
 
 ## Commands

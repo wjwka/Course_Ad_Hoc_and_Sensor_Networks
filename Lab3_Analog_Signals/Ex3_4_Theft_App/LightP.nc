@@ -9,12 +9,9 @@ module LightP {
 		interface Leds;
 		interface Timer<TMilli> as Timer1;
 		interface SplitControl as RadioControl;
-		interface Timer<TMilli> as SensorReadTimer;
 
-		interface Read<uint16_t> as ReadPar;
 		interface ReadStream<uint16_t> as StreamPar;
 
-		interface ShellCommand as ReadCmd;
 		interface ShellCommand as StreamCmd;
 		interface ShellCommand as ChangeThresholdCmd;
 	}
@@ -39,18 +36,6 @@ module LightP {
 		call RadioControl.start();
 	}
 
-	error_t checkDone() {
-		int len;
-		char *reply_buf = call ReadCmd.getBuffer(128); 
-		if (--m_remaining == 0) {
-			len = sprintf(reply_buf, "%ld %d %d %d %d\r\n", m_seq, m_par,m_tsr,m_hum,m_temp);
-			m_remaining = NUM_SENSORS;
-			m_seq++;
-			call ReadCmd.write(reply_buf, len);
-		}
-		return SUCCESS;
-	}
-
 	task void checkStreamPar() {
 		uint8_t i;
 		char *reply_buf = call StreamCmd.getBuffer(128);
@@ -71,14 +56,6 @@ module LightP {
 		call StreamCmd.write(reply_buf, len+1);
 	}
 
-	event void SensorReadTimer.fired() {
-		call ReadPar.read();
-	}
-
-	event void ReadPar.readDone(error_t e, uint16_t data) {
-		m_par = data;
-		checkDone();
-	}
 
 	event void StreamPar.readDone(error_t ok, uint32_t usActualPeriod) {
 		if (ok == SUCCESS) {
@@ -92,20 +69,6 @@ module LightP {
 	}
 
 	event void StreamPar.bufferDone(error_t ok, uint16_t *buf,uint16_t count) {}
-
-	event char* ReadCmd.eval(int argc, char** argv) {
-		char* reply_buf = call ReadCmd.getBuffer(18);
-		if (timerStarted == FALSE) {
-			strcpy(reply_buf, ">>>Start sampling\n");
-			call SensorReadTimer.startPeriodic(SAMPLE_RATE);
-			timerStarted = TRUE;
-		} else {
-			strcpy(reply_buf, ">>>Stop sampling\n");
-			call SensorReadTimer.stop();
-			timerStarted = FALSE;
-		}
-		return reply_buf;
-	}
 
 	event char* StreamCmd.eval(int argc, char* argv[]) {
 		char* reply_buf = call StreamCmd.getBuffer(35);

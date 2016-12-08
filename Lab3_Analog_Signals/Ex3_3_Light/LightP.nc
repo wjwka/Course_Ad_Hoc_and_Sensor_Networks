@@ -29,7 +29,6 @@ module LightP {
 	uint32_t m_seq = 0;
 	uint16_t m_par,m_tsr,m_hum,m_temp;
 	uint16_t m_parSamples[SAMPLE_SIZE];
-	//double average_light_intensity = 0;
 
 
 	event void Boot.booted() {
@@ -50,7 +49,6 @@ module LightP {
 
 	task void checkStreamPar() {
 		uint8_t i;
-		//char temp[8];
 		char *reply_buf = call StreamCmd.getBuffer(128);
 		int len = 0;
 		int sum = 0;

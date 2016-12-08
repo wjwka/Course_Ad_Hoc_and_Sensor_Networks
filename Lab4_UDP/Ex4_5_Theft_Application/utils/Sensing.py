@@ -43,7 +43,12 @@ class Sensing(tinyos.message.Message.Message):
         except:
             pass
         try:
-            s += "  [status=0x%x]\n" % (self.get_status())
+	    if(self.get_status() is 0x1):
+            s += "  [status: Theft]\n" 
+	    elif(self.get_status() is 0x0):
+            s += "  [status: Normal]\n" 
+	    else:
+            s += "  [status: Error]\n" 
         except:
             pass
         return s

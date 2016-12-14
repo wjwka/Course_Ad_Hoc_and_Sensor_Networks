@@ -1,16 +1,16 @@
 
 import socket
-import Sensing
+import Sensing_1
 import re # regular expression
 import sys
 
-port = 8000
 
+port = 7000
 if __name__ == '__main__':
 
+   
     s = socket.socket(socket.AF_INET6, socket.SOCK_DGRAM)
     s.bind(('', port))
-    
     while True:
         data, addr = s.recvfrom(1024)
         if (len(data) > 0):
@@ -19,4 +19,3 @@ if __name__ == '__main__':
 
             print addr
             print rpt
-

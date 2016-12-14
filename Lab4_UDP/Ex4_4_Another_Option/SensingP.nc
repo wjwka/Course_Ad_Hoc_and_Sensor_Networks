@@ -21,8 +21,8 @@ module SensingP {
                 SENSE_PERIOD_LIGHT=128,
 	};
 
-	nx_struct sensing_report stats;
-        nx_struct sensing_report_1 stats_light;
+	nx_struct sensing_report_Humidity stats;
+        nx_struct sensing_report_Light stats_light;
 	struct sockaddr_in6 route_dest;
         struct sockaddr_in6 route_dest_light;
 	m_humidity = 0;
@@ -37,7 +37,7 @@ module SensingP {
 		inet_pton6(REPORT_DEST, &route_dest.sin6_addr);
                 inet_pton6(REPORT_DEST, &route_dest_light.sin6_addr);
 		call SenseTimer.startPeriodic(SENSE_PERIOD);
-                call SenseTimer.startPeriodic(SENSE_PERIOD_LIGHT);
+                call SenseTimer_Light.startPeriodic(SENSE_PERIOD_LIGHT);
 	}
 
 	task void report_humidity() {

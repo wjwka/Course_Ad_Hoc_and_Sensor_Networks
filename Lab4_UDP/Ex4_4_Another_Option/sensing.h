@@ -5,12 +5,13 @@ enum {
       AM_SENSING_REPORT = -1
 };
 
-nx_struct sensing_report {
+nx_struct sensing_report_Humidity {
   nx_uint16_t seqno;
   nx_uint16_t sender;
   nx_uint16_t humidity;
 } ;
-nx_struct sensing_report_1 {
+
+nx_struct sensing_report_Light {
   nx_uint16_t seqno;
   nx_uint16_t sender;
   nx_uint16_t light;

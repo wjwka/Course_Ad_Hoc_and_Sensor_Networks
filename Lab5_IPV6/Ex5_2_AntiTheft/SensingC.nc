@@ -30,6 +30,15 @@ configuration SensingC {
 	components new TimerMilliC() as LightTimer;
 	SensingP.LightTimer -> LightTimer;
 
+	components new TimerMilliC() as Led0Timer;
+	SensingP.Led0Timer -> Led0Timer;
+
+	components new TimerMilliC() as Led1Timer;
+	SensingP.Led1Timer -> Led1Timer;
+
+	components new TimerMilliC() as Led2Timer;
+	SensingP.Led2Timer -> Led2Timer;
+
 	components new ConfigStorageC(VOLUME_CONFIG) as LightSettings;
 	SensingP.ConfigMount -> LightSettings;
 	SensingP.ConfigStorage -> LightSettings;

@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            .buttonUp{
+                width: 0;
+                height: 0;
+                border-left: 50px solid white;
+                border-bottom: 40px solid red;
+                border-right: 50px solid white;
+                padding: 0;
+            }
+            .buttonDown{
+                width: 0;
+                height: 0;
+                border-left: 50px solid white;
+                border-right: 50px solid white;
+                border-top: 40px solid red;
+                padding: 0;
+            }
+            .buttonRight{
+                width: 0;
+                height: 0;
+                border-top: 50px solid white;
+                border-left: 40px solid red;
+                border-bottom: 50px solid white;
+                padding:0;
+            }
+            .buttonLeft{
+                width: 0;
+                height: 0;
+                border-top: 50px solid white;
+                border-right: 40px solid #ff9900;
+                border-bottom: 50px solid white;
+                padding:0;
+            }
+            .buttonCircle {
+                width: 50px;
+                height: 50px;
+                -webkit-border-radius: 25px;
+                -moz-border-radius: 25px;
+                border-radius: 25px;
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="{{  url_for('ctrl_wheels') }}" method=post>
+            <button  name="dir" value="up" class="buttonUp"></button>
+            <button name=dir value=down class="buttonDown"></button>
+            <button name=dir value=right class="buttonRight"></button>
+            <button name=dir value=left class="buttonLeft"></button>
+            <button name=dir value=stop class="buttonCircle"></button>
+        </form>
+    </body>
+</html>

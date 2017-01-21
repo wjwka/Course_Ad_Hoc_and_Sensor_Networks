@@ -20,5 +20,6 @@
 # Implementation
 ## Video Transfer
 2 methods:
+
 1. Motion
 2. Mjpg-Streamer

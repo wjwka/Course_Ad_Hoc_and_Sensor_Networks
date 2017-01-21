@@ -24,7 +24,10 @@ def ctrl_wheels():
             print 'MOVELEFT command received'
         elif id == 'right':
             #moveright command
-            print 'MOVERIGHT COMMAND RECEIVED'
+            print 'MOVERIGHT command received'
+        elif id == 'stop':
+            #moveright command
+            print 'STOP command received'
     return redirect(url_for('init_webserver'))
 
 @app.route('/data')

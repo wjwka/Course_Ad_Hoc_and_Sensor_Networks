@@ -33,3 +33,5 @@ def ctrl_wheels():
 @app.route('/data')
 def render_data():
     return render_template("data.html")
+
+app.run(host="0.0.0.0",port=5000)

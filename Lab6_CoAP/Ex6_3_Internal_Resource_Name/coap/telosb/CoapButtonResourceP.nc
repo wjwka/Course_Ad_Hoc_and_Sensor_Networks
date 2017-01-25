@@ -21,6 +21,7 @@ generic module CoapButtonResourceP(uint8_t uri_key) {
   coap_resource_t *temp_resource = NULL;
   unsigned int temp_content_format;
   uint16_t button_press_count = 0;
+  char name[64] = "button";
 
   command error_t CoapResource.initResourceAttributes(coap_resource_t *r) {
     call Notify.enable();
@@ -32,11 +33,11 @@ generic module CoapButtonResourceP(uint8_t uri_key) {
   task void getMethod() {
 
     int datalen = 0;
-    char databuf[4]; //ASCII of uint8_t -> max 3 chars + \0
+    char databuf[81]; // 64+16+\n
 
     //todo
     uint16_t val = button_press_count;
-    datalen= snprintf(databuf, sizeof(databuf), "%i", val);
+    datalen= snprintf(databuf, sizeof(databuf), "%s:%i", name, val);
 
     response = coap_new_pdu();
     response->hdr->code = COAP_RESPONSE_CODE(205);
@@ -82,14 +83,22 @@ generic module CoapButtonResourceP(uint8_t uri_key) {
   // PUT:
   task void putMethod() {
     size_t size;
-    unsigned char *data;
+    char* data = "00000000";//init
 
     response = coap_new_pdu();
 
     coap_get_data(temp_request, &size, &data);
+    //memcpy(temp_request, &size, data);
 
-    *data = *data - *(uint8_t *)"0";
-    button_press_count = *data;
+
+    // *data = *data - *(uint16_t *)"0";
+    if(data[0] <= '9' && data[0] >= '0')
+        button_press_count = atol(data);
+    else{
+
+        strncpy(name, data, sizeof(data) );
+        name[sizeof(data)] = '\0';
+    }
 
     response->hdr->code = COAP_RESPONSE_CODE(204);
 

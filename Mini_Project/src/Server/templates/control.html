@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <style>
+            .buttonUp,
+            .buttonDown,
+            .buttonRight,
+            .buttonLeft {
+                width: 0;
+                height: 0;
+                border: 50px solid white;
+                padding: 0;
+            }
+            .buttonUp{
+                border-bottom: 50px solid black;
+            }
+            .buttonDown{
+                border-top: 50px solid black;
+            }
+            .buttonRight{
+                border-left: 50px solid black;
+            }
+            .buttonLeft{
+                border-right: 50px solid black;
+            }
+            .buttonCircle {
+                width: 100px;
+                height: 100px;
+                -webkit-border-radius: 50px;
+                -moz-border-radius: 50px;
+                border-radius: 50px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form action="{{  url_for('ctrl_wheels') }}" method=post>
+            <table align="center">
+                <tr>
+                    <td></td>
+                    <td>
+                        <input  name="dir" value="up" type="image" src="../static/up.png">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name=dir value=left type="image" src="../static/left.png"> 
+                    </td>
+                    <td>
+                        <input name=dir value=stop type="image" src="../static/stop.png">
+                    </td>
+                    <td>
+                        <input name=dir value=right type="image" src="../static/right.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input name=dir value=down type="image" src="../static/down.png">
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

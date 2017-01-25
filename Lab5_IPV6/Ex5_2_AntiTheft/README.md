@@ -42,4 +42,4 @@ You first need to define formats for settings and alarm report messages which mu
 
 5. *Dissemination of settings* The settings should also be sent out to all nodes if they were changed on one node (port 4000). In this case the type for the **settings_report** is **SETTINGS_USER**. If your node receives a message with this type you have to save the new settings to your node.
 
-6. Settings request When a new node connects to the network it should ask the network for the settings. In this case a **SETTINGS_REQUEST** has to be sent and all nodes receiving a request have to respond with the current settings in a **SETTINGS_RESPONSE**.
+6. *Settings request* When a new node connects to the network it should ask the network for the settings. In this case a **SETTINGS_REQUEST** has to be sent and all nodes receiving a request have to respond with the current settings in a **SETTINGS_RESPONSE**.

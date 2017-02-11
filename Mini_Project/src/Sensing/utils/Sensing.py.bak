@@ -28,25 +28,25 @@ class Sensing(tinyos.message.Message.Message):
     # Return a String representation of this message. Includes the
     # message type name and the non-indexed field values.
     #
-    def __str__(self):
-        s = "Message <Sensing> \n"
-        try:
-            s += "  [seqno=0x%x]\n" % (self.get_seqno())
-        except:
-            pass
-        try:
-            s += "  [sender=0x%x]\n" % (self.get_sender())
-        except:
-            pass
-        try:
-            s += "  [humidity=0x%x]\n" % (self.get_humidity())
-        except:
-            pass
-        try:
-            s += "  [light=0x%x]\n" % (self.get_light())
-        except:
-            pass
-        return s
+    #def __str__(self):
+        #s = "Message <Sensing> \n"
+        #try:
+            #s += "  [seqno=0x%x]\n" % (self.get_seqno())
+        #except:
+            #pass
+        #try:
+            #s += "  [sender=0x%x]\n" % (self.get_sender())
+        #except:
+            #pass
+        #try:
+            #s += "  [humidity=0x%x]\n" % (self.get_humidity())
+        #except:
+            #pass
+        #try:
+            #s += "  [light=0x%x]\n" % (self.get_light())
+        #except:
+            #pass
+        #return s
 
     # Message-type-specific access methods appear below.
 

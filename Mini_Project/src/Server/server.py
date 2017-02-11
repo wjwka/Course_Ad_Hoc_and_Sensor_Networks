@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect, url_for
 from flask import render_template
+import control
 app = Flask(__name__)
 
 @app.route('/')
@@ -13,20 +14,25 @@ def ctrl_wheels():
         print request.form
         print "***********"
         id = request.form['dir']
-        if id == 'up':
+        if id == 'forward':
             #forward command
+            control.forward()
             print 'FORWARD command received'
-        elif id == 'down':
+        elif id == 'backward':
             #backward command
+            control.backward()
             print 'BACKWARD command received'
         elif id == 'left':
             #moveleft command
+            control.left()
             print 'MOVELEFT command received'
         elif id == 'right':
             #moveright command
+            control.right()
             print 'MOVERIGHT command received'
         elif id == 'stop':
             #moveright command
+            control.stop()
             print 'STOP command received'
     return redirect(url_for('init_webserver'))
 

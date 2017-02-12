@@ -7,9 +7,11 @@ Set up a router to communicate with other nodes through ipV6.
 ## Direction
 The programs under this part are responsible for the direction controlling. There are 2 subparts:
 1. Hardware-level control:
-    Mainly written in nesC and aimed to control the GPIOs. Some basic commands have been implemented here, e.g., **forward**, **backward**, **stop**.
+
+   Mainly written in nesC and aimed to control the GPIOs. Some basic commands have been implemented here, e.g., **forward**, **backward**, **stop**.
 2. Software-level interface:
-    Mainly written in python and implemented some other commands through the integration of the basic commands above, such as **left**, **right**. Also, it provides an interface through which user could send all those commands directly through this interface instead of running commands in the node shell through **nc6** command.
+
+   Mainly written in python and implemented some other commands through the integration of the basic commands above, such as **left**, **right**. Also, it provides an interface through which user could send all those commands directly through this interface instead of running commands in the node shell through **nc6** command.
 
 ## Sensing
 This will be used for sensing data from its sensors. Similarly to the Direction part, there is also an high-level interface being implemented(also written in python).

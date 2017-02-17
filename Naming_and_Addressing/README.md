@@ -21,6 +21,7 @@
     1. Open-loop: Forward Error Correction(FEC)
     2. Close-loop: ARQ(Automatic Repeat Request) schemes, retransmissions
     3. Hybrid approaches
+
 ### ARQ Design Aspects
 1. Basic procedure:
     1. Transmitter prepares packet
@@ -32,6 +33,7 @@
     2. goback-N
     3. selective repeat
     4. for WSNs alternating bit is often sufficient,[todo]since the bitrates in WSN are always low
+
 ### How to Use ACK(Acknowledgments)?
 1. Be careful about ACKs from different layers
 2. Do not necessarily acknowledge every packet -- use cumulative ACKs
@@ -42,6 +44,7 @@
 5. Implicit ACKs: useful with multi-hop forwarding
 
    "I send you a packet and I hear you forwarding the same packet, so I don't need an extra ACK"
+
 ### When to Retransmit?
 1. For stationary BSC: any time
 2. For fading channel: postpone until deep fade ends( > coherence time )

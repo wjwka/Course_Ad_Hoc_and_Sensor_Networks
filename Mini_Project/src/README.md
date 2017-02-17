@@ -32,16 +32,14 @@ $ cd Sensing/utils/
 $ make telosb install,2 bsl,/dev/ttyUSB1
 $ python streaming.py
 ```
-
-
 ## Server
 Set up a flask server to visulize the controller page and the sensed data. Web page UIs are mainly implemented in this part under statics/ and templates/ directories. At the same time, the server could directly use and call the interfaces which have been implemented in the **Direction** nd **Sensing** parts. 
 ### Start the server:
-> $ cd Server/
-
-> $ export FLASK_APP = server.py
-
-> $ flask run
+```sh
+$ cd Server/
+$ export FLASK_APP = server.py
+$ flask run
+```
 
 ### Access the controller page using the address:
 > 127.0.0.1:5000

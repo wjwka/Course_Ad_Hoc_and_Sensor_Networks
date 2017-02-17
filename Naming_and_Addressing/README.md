@@ -1,68 +1,4 @@
-# Link Layer
-## Link Layer Tasks in General
-1. **Framing**: Group sequence of bits into packets/frames
-2. **Error control**: make sure that transmitted bits arrive and no others
-3. **Flow control**: ensure that a faster sender does not overrun a slower receiver
-4. **Link management**: discover/manage links to meighbors 
-
-## Error Control
-### Overview
-1. ensure that the data transfer is:
-    1. Error-free:
-    2. In-sequence:
-    3. Duplication-free:
-    4. Loss-free:
-    5. Energy-efficiency
-2. Reasons for bit errors or packet losses:
-    1. interference
-    2. fading
-    3. loss of synchronization
-3. Approaches:
-    1. Open-loop: Forward Error Correction(FEC)
-    2. Close-loop: ARQ(Automatic Repeat Request) schemes, retransmissions
-    3. Hybrid approaches
-
-### ARQ Design Aspects
-1. Basic procedure:
-    1. Transmitter prepares packet
-    2. Transmitter sends packet and sets timer
-    3. Receiver provides **feedback** to transmitter
-    4. If sender infers that packet has not been received correctly, it will retransmits
-2. Standard-ARQ protocols:
-    1. alternating-bit (stop-wait)
-    2. goback-N
-    3. selective repeat
-    4. for WSNs alternating bit is often sufficient,[todo]since the bitrates in WSN are always low
-
-### How to Use ACK(Acknowledgments)?
-1. Be careful about ACKs from different layers
-2. Do not necessarily acknowledge every packet -- use cumulative ACKs
-    1. Example scheme: send ACK every *W* packets, after timeout or after duplicate packet -- ACK contains information about packets since lask ACK
-    2. Tradeoff against buffer space
-3. ACKs: wasteful over excellent links
-4. NACKs: additional mechanisms
-5. Implicit ACKs: useful with multi-hop forwarding
-
-   "I send you a packet and I hear you forwarding the same packet, so I don't need an extra ACK"
-
-### When to Retransmit?
-1. For stationary BSC: any time
-2. For fading channel: postpone until deep fade ends( > coherence time )
-3. How long to wait: 
-    1. probing protocol
-        1. two protocol modes, "normal" and "probing"
-        2. when error occurs, switch to probing mode
-        3. In probing mode, periodically send short packets until sucessful go to normal mode
-    2. wait for some fixed time, e.g. the coherence time plus some safety margin
-
-## Framing
-### Packet Size
-1. Small packets: lower error rate, highter packetzation overhead
-2. Large packets: higher error rate, lower packetzation overhead
-3. Depends on BER(bit error rate), energy consumption
-
-# Naming & Addressing
-## Introduction
+# Introduction
 1. Traditional(fixed, wireless ad hoc): denote individual noted/interfaces with addresses, e.g. MAC address, IP address, etc.
 2. WSN: content-based addresses
 3. Name VS Address
@@ -73,15 +9,15 @@
         1. often hierarchical structure
     3. Binding services: map names to addresses
 
-## Id-centric addressing
-### Address Management
+# Id-centric addressing
+## Address Management
 1. **Address allocation**: assign an entity an addresss from a given pool of possible addresses
 
    Distributed schemes preferable, centralized solutions like DHCP do not scale well
 2. **Address deallocation**: once an address is no longer used, put it back into the address pool
 3. **Duplicate address detection(DAD)**[todo]
 
-### Address Allocation
+## Address Allocation
 1. Priori allocation: during manufacturing or before deployment
 2. On-demand allocation: either centralized or distributed
     1. Centralized solutions create hot spots
@@ -96,7 +32,7 @@
     3. Locally unique: requires only small representations, but definitely requires extra protocol
         1. "Local" = two-hop neighborhood
 
-### Uniqueness Requirements
+## Uniqueness Requirements
 1. On the MAC layer: At least local uniqueness required
 2. At the routing layer:
     1. MANET: network-wide- or global uniqueness required, routing must be able to reach individual nodes
@@ -105,10 +41,10 @@
        sensor-to-sensor communication happens rarely, most traffic flows to sinks
        => Sinces and actuators need network-wide or globally unique addresses, for sensors locally unique addresses might be sufficient
 
-### Address Representation
+## Address Representation
 [todo]
 
-### Distributed Assignment of Unique Addresses
+## Distributed Assignment of Unique Addresses
 1. In MANET, there're several methods:
     1. Node selects randomly a temporary address -> issues an **address request** packet to that address
         1. If routing protocol finds another station, this answers with **address reply**
@@ -118,7 +54,7 @@
         1. Some nodes become **leader nodes**, pick address ranges randomly and check for collisions with other leaders
         2. Other nodes create their addresses from the range adopted by their leader
 
-### Distributed Assignment of Locally Unique Addresses
+## Distributed Assignment of Locally Unique Addresses
 1. With locally unique address assignments it is possible to re-use addresses within the network, so address representation can be smaller
 2. "greedy" use:
     1. When there is a choice, use numerically smallest address
@@ -131,7 +67,7 @@
     1. [todo]Example
     2. Summary: the addresses of receptions must be unique
 
-## Content-based addressing
+# Content-based addressing
 1. change from id-centric to data-centric networking in WSN
 2. Supported by content-based names/addresses
 

@@ -1,11 +1,13 @@
-# Instruction
-This page shows the basic structure of this program and how to run the whole program. There are 4 parts in this project: *PppRouter*, *Direction*, *Sensing*, *Server*.
+# Introduction
+This page shows the basic structure of this project and how to run the it. 
+
+There are 4 parts in this project: *PppRouter*, *Direction*, *Sensing*, *Server*.
 
 ## PppRouter
 Set up a router to communicate with other nodes through ipV6.
 
 ## Direction
-The programs under this part are responsible for the direction controlling. There are 2 subparts:
+This part is responsible for controlling direction. There are 2 subparts:
 
 1. Hardware-level control:
 
@@ -13,22 +15,23 @@ The programs under this part are responsible for the direction controlling. Ther
 
 2. Software-level interface:
 
-   Mainly written in python and implemented some other commands through the integration of the basic commands above, such as **left**, **right**. Also, it provides an interface through which user could send all those commands directly through this interface instead of running commands in the node shell through **nc6** command.
+   Mainly written in python and implemented some other commands through the integration of the basic commands above, such as **left**, **right**. Also, it provides an interface through which user could send all those commands directly instead of running commands line in the node shell through **nc6** command.
 
 ## Sensing
-This will be used for sensing data from its sensors. Similarly to the Direction part, there is also an high-level interface being implemented(also written in python).
+This part will be used for sensing data from its sensors. Similarly to the Direction part, there is also an high-level interface being implemented(also written in python).
 
 ### Start Ppp Router
-> $ cd PppRouter
-
-> $ make telosb install
+```sh
+$ cd PppRouter
+$ make telosb install
+```
 
 ### Start sampling:
-> $ cd Sensing/utils/
-
-> $ make telosb install,2 bsl,/dev/ttyUSB1
-
-> $ python streaming.py
+```sh
+$ cd Sensing/utils/
+$ make telosb install,2 bsl,/dev/ttyUSB1
+$ python streaming.py
+```
 
 
 ## Server

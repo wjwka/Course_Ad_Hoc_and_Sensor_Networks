@@ -55,9 +55,24 @@
         3. [todo]figure
         4. exposed-terminal problem is not solved
         4. Hidden-terminal problem is not completly solved
+        5. MANETs: IEEE 802.11 uses RTS/CTS
+        6. WSNs: IEEE 802.15.4 uses no RTS/CTS
 
 # MACs for WSNs
 ## Introduction
+### Sources of energy waste
+1. Collisions
+2. Overhearing
+3. Protocol overhead
+4. Idle listening
+
+### Deal with Idle Listening
+1. In 802.11: TIM and sleeping
+
+   nodes that have data buffered for receivers(e.g. APs) send **traffic indictors**(TI) at pre-arranged points in time, receivers need to wake up at these points, but can sleep otherwise. If TI indicates buffered packets to a receiver, it remains awake and exchanges data with transmitter
+2. In WSNs
+    1. TDMA-based approaches
+    2. Contention approaches
 ## Asynchronous contention-based schemes
 ## Synchronized contention-based schemes
 ## Event-based MACs

@@ -9,11 +9,14 @@
   * For example: AP, BS
 3. What if:
   * No infrastructure is available?
-     Disater areas
+
+       Disater areas
   * It is to expensive / inconvenient to set up?
-     At remote areas
+
+       At remote areas
   * There is no time to set it up?
-     Military operations
+
+       Military operations
 
 ## Possible Applications for Infrastructure-free Networks
 1. Personal-area networking
@@ -70,6 +73,14 @@
       * Additional problem: network scale, especially in WSNs
 
 # Wireless Sensor Networks
+## Important conclusions
+1. The traffic carried consists of sensor and actuation data instead of web pages, multimedia
+2. This leads to significantly different packet size and inter-arrival time statistics
+3. The protocols can know the carried data and take it into consideration in their operation
+
+   => **data-centric networking**
+
+
 
 # WSN Network Architectures
 

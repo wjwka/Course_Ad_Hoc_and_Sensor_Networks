@@ -54,7 +54,7 @@
 3. MPRs
     1. The objective of MPR selection is for a node to select a subset of its neighbors such that a broadcase message retransmitted by these selected neighbors, will be received by all nodes 2 hops away
 
-   [todo]figure page 12
+       [todo]figure page 12
     2. The neighbors of node N wich are NOT in its MPR set, receive and process broadcast messages but do not retransmit brodcast messages received from the node N
 
    [todo]figure page 13

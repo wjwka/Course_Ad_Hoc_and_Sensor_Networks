@@ -1,16 +1,16 @@
 # Motivation and applications
 ## Infrastructure-based Wireless Networks
 1. Typical wireless networks have an **infrastructure**:
-  * UMTS/LTE/WiFi hostpots,etc., typically base stations(BS) or access points(AP) are connected to wired backbone
+  * UMTS/LTE/WiFi hotspots, etc., typically base stations(BS) or access points(AP) are connected to wired backbone
   * Infrastructure is exploited for asymmetric protocol design
   * Inter-mobile traffic relayed through backbone, no peer-to-peer communication
-![alt tag](http://oga6pysjo.bkt.gdipper.com/image/Course-Ad-Hoc/infrastructure.jpg)
+![](http://oga6pysjo.bkt.gdipper.com/image/Course-Ad-Hoc/infrastructure.jpg)
 2. Crucial property: infrastructure network has nodes which cannot be removed without breaking network operation
   * For example: AP, BS
 3. What if:
   * No infrastructure is available?
 
-       Disater areas
+       Disaster areas
   * It is to expensive / inconvenient to set up?
 
        At remote areas
@@ -32,7 +32,7 @@
   * This is an ad-hoc network- a network constructed for a special purpose and for limited time
   * "Without infrastructure" means: without nodes that are indispensable - it is still possible to have role sharing but every node must be able to take over each role
 2. Simple example: laptops in a conference/lecture room
-![alt tag](http://oga6pysjo.bkt.gdipper.com/image/Course-Ad-Hoc/Computers-in-a-room.jpg)
+![](http://oga6pysjo.bkt.gdipper.com/image/Course-Ad-Hoc/Computers-in-a-room.jpg)
 3. Popular acronym: MANET = Mobile Ad hoc NETwork
 
 ## Challenges
@@ -57,11 +57,13 @@
     * Limited communication range results e.g. from:
       * Reduced transmit power in attempt to lower power consumption
       * Impact of path loss, fading, interference, etc.
-    * In many applications information must be conveyed over distances significantly larger than communication range 
+    * In many applications information must be conveyed over distances significantly larger than communication range
       * multi-hop operation
       * routing
     * Potential benefit: communication over intermediate hops can be more energy-efficient
-    ![alt tag](http://oga6pysjo.bkt.gdipper.com/image/Course-Ad-Hoc/Multi-hopping.jpg)
+
+       ![](http://oga6pysjo.bkt.gdipper.com/image/Course-Ad-Hoc/Multi-hopping.jpg)
+
   * Mobility => Adaptive Protocols
     * In many (not all!) ad hoc network applications participants/nodes can move around
       * Or the whole network can move as a whole (e.g. Body Sensor Networks)
@@ -80,7 +82,25 @@
 
    => **data-centric networking**
 
+## Applications
+1. Environmental Monitoring
+2.  machine diagnosis and preventive maintenance
+3. Monitoring mechanical stress
 
+## Comparison: MANET vs. WSN
+1. Commonalities: self-organization, energy-efficiency, multi-hop
+2. Differences:
+
+   | Factors         |             WSN |            MANET |
+   | :-------------: | :-------------: | :--------------: |
+   | Interaction    | with environment| close to humans           |
+   | Scale       |     larger   |   smaller   |
+   | Equipment       | vise | more powerful and expensive equipment           |
+   | Energy | tighter requirement| node recharged after few hours           |
+   | Mobility | often static | all nodes can move           |
+   | Application-specific | depend much stronger on application specifics | uniform and similar to IP networks            |
+   | centric | data-centric       | node id centric           |
+   | Standards | IEEE 802.15.4 | IEEE 802.11 |
+   | Routing Protocols | Flooding, Flat Routing, Hierarchical, Location based | Pro-active, Reactive, Hybrid |
 
 # WSN Network Architectures
-

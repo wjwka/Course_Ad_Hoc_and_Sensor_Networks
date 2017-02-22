@@ -84,7 +84,7 @@
 
 ## Applications
 1. Environmental Monitoring
-2.  machine diagnosis and preventive maintenance
+2. Machine diagnosis and preventive maintenance
 3. Monitoring mechanical stress
 
 ## Comparison: MANET vs. WSN
@@ -99,8 +99,7 @@
    | Energy | tighter requirement| node recharged after few hours           |
    | Mobility | often static | all nodes can move           |
    | Application-specific | depend much stronger on application specifics | uniform and similar to IP networks            |
-   | centric | data-centric       | node id centric           |
-   | Standards | IEEE 802.15.4 | IEEE 802.11 |
-   | Routing Protocols | Flooding, Flat Routing, Hierarchical, Location based | Pro-active, Reactive, Hybrid |
+   | Centric | data-centric       | node id centric           |
+   | Standards | [IEEE 802.15.4](https://github.com/sulxxy/Course_Ad_Hoc_and_Sensor_Networks/tree/master/MAC#ieee-802154) | IEEE 802.11 |
 
 # WSN Network Architectures

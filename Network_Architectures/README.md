@@ -1,3 +1,6 @@
+# Global structure
+![Network Architectures](./Network_Architecture_MindMap.png)
+
 # Motivation and applications
 ## Infrastructure-based Wireless Networks
 1. Typical wireless networks have an **infrastructure**:

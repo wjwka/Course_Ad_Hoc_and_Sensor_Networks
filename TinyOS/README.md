@@ -1,6 +1,6 @@
 # Introduction
 ## What is TinyOS?
-1. TinyOS is an open source operating system for embedded, low power,wireless devices.
+1. TinyOS is an open source operating system for embedded, low power, wireless devices.
 
    ![alt tag]()
 
@@ -26,7 +26,7 @@
 2. Portable and platform-specific services
 3. Adaptable to the application needs
 
-### Rebustness
+### Robustness
 1. Static allocation
 2. Static binding
 
@@ -49,16 +49,16 @@
    Defines the internal workings of the component
 
 ## Components
-1. Components are something like entities. Every component encapsulates its own functions and they can provide other components services through interfaces. 
+1. Components are something like entities. Every component encapsulates its own functions and they can provide other components services through interfaces.
 2. Modules
 
-   A module are used to define the behaviors of a compoment. That is, modules define functions. 
+   A module are used to define the behaviors of a component. That is, modules define functions.
 3. Configurations
 
    A configuration shows how components are connected(wired) in a program.
 
 ## Interfaces
-1. Interfaces list the commands it can excute and the events it can emit(signal).
+1. Interfaces list the commands it can execute and the events it can emit(signal).
 
    ![alt tag]()
 2. Users and providers
@@ -71,8 +71,10 @@
   * B **signals events** to A
 
 ## Wiring
-Wiring(->) means connecting providers and users together. For example, module A uses an interface called Leds. However, if we don't declare the provider of the interface Leds, the commands in Leds would be undefined. So we declare a provider called LedsC. Now, we can use 
-> A.Leds -> LedsC
+Wiring(->) means connecting providers and users together. For example, module A uses an interface called Leds. However, if we don't declare the provider of the interface Leds, the commands in Leds would be undefined. So we declare a provider called LedsC. Now, we can use
+```C
+A.Leds -> LedsC
+```
 
 to connect LedsC(provider) with A(User).
 

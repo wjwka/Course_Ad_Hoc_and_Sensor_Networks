@@ -1,66 +1,79 @@
 <html>
     <head>
         <style>
-            .buttonUp,
-            .buttonDown,
-            .buttonRight,
-            .buttonLeft {
+            .buttonUp{
                 width: 0;
                 height: 0;
-                border: 50px solid white;
+                border-left: 25px solid white;
+                border-bottom: 25px solid #0099ff;
+                border-right: 25px solid white;
+                border-top: 0px;
                 padding: 0;
             }
-            .buttonUp{
-                border-bottom: 50px solid black;
-            }
             .buttonDown{
-                border-top: 50px solid black;
+                width: 0;
+                height: 0;
+                border-left: 25px solid white;
+                border-right: 25px solid white;
+                border-top: 25px solid #0099ff;
+                border-bottom: 0px;
+                padding: 0;
             }
             .buttonRight{
-                border-left: 50px solid black;
+                width: 0;
+                height: 0;
+                border-top: 25px solid white;
+                border-left: 25px solid #0099ff;
+                border-bottom: 25px solid white;
+                border-right: 0px;
+                padding:0;
             }
             .buttonLeft{
-                border-right: 50px solid black;
+                width: 0;
+                height: 0;
+                border-top: 25px solid white;
+                border-right: 25px solid #0099ff;
+                border-bottom: 25px solid white;
+                border-left: 0px;
+                padding:0;
             }
             .buttonCircle {
-                width: 100px;
-                height: 100px;
-                -webkit-border-radius: 50px;
-                -moz-border-radius: 50px;
-                border-radius: 50px;
+                width: 50px; 
+                height: 50px; 
+                background: #0099ff; 
+                border-radius: 50px; 
             }
-
+            html,body {
+                height: 100%;
+            }
         </style>
-    </head>
-    <body>
-        <form action="{{  url_for('ctrl_wheels') }}" method=post>
-            <table align="center">
-                <tr>
-                    <td></td>
-                    <td>
-                        <button  name="dir" value="forward" type="image" src="../static/up.png">
-                    </td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <button name=dir value=left type="image" src="../static/left.png"> 
-                    </td>
-                    <td>
-                        <button name=dir value=stop type="image" src="../static/stop.png">
-                    </td>
-                    <td>
-                        <button name=dir value=right type="image" src="../static/right.png">
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <button name=dir value=backward type="image" src="../static/down.png">
-                    </td>
-                    <td></td>
-                </tr>
-            </table>
-        </form>
+        <body>
+        <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+            <td></td>
+            <td><form action="{{  url_for('ctrl_wheels') }}" method=post>
+                <button  name="dir" value="up" class="buttonUp"></button>
+                </form></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td width="40"><form action="{{  url_for('ctrl_wheels') }}" method=post>
+                <button  name="dir" value="up" class="buttonLeft"></button>
+                </form></td>
+            <td  width="65" ><form action="{{  url_for('ctrl_wheels') }}" method=post>
+                <button  name="dir" value="up" class="buttonCircle"></button>
+                </form></td>
+            <td><form action="{{  url_for('ctrl_wheels') }}" method=post>
+                <button  name="dir" value="up" class="buttonRight"></button>
+                </form></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><form action="{{  url_for('ctrl_wheels') }}" method=post>
+                <button  name="dir" value="up" class="buttonDown"></button>
+                </form></td>
+            <td></td>
+        </tr>
+        </table>
     </body>
 </html>

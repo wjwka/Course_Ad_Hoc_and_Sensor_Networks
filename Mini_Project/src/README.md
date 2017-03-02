@@ -4,7 +4,7 @@ This page shows the basic structure of this project and how to run the it.
 There are 4 parts in this project: *PppRouter*, *Direction*, *Sensing*, *Server*.
 
 ## PppRouter
-Set up a router to communicate with other nodes through ipV6.
+Set up a router to communicate with other nodes through IPv6.
 
 ## Direction
 This part is responsible for controlling direction. There are 2 subparts:
@@ -18,7 +18,7 @@ This part is responsible for controlling direction. There are 2 subparts:
    Mainly written in python and implemented some other commands through the integration of the basic commands above, such as **left**, **right**. Also, it provides an interface through which user could send all those commands directly instead of running commands line in the node shell through **nc6** command.
 
 ## Sensing
-This part will be used for sensing data from its sensors. Similarly to the Direction part, there is also an high-level interface being implemented(also written in python).
+This part will be used for sensing data from its sensors. Similarly to the Direction part, there is also an high-level interface being implemented(also written in python). In this project, the sensor will sense the humidity and the light. There is a threshold of the light (default is 100). If the light is smaller than the threshold, the led will be turned on.
 
 ### Start Ppp Router
 ```sh

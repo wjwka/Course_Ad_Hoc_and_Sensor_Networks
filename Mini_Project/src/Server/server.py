@@ -1,5 +1,6 @@
 from flask import Flask, request, redirect, url_for
 from flask import render_template
+import os
 import control
 app = Flask(__name__)
 
@@ -12,6 +13,8 @@ def set_threshold():
     threshold_value = int(request.form['text'])
     print "new threshold received: "
     print threshold_value
+    os.system("echo th_set 100 | nc6 -u fec0::4 2000 &")
+    os.system("killall -9 nc6")
     return render_template('control.html')
 
 @app.route('/ctrl', methods=['GET','POST'])

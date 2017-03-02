@@ -1,4 +1,4 @@
-module ShellDemoP {
+module DirectionP {
 	uses {
 		interface Boot;
 		interface SplitControl as RadioControl;

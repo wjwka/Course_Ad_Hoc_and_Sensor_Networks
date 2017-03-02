@@ -1,35 +1,35 @@
 #include "hardware.h"
 
 
-configuration ShellDemoC {
+configuration DirectionC {
 }
 implementation {
 
-	components MainC, ShellDemoP;
+	components MainC, DirectionP;
     components HplMsp430GeneralIOC;
     components new Msp430GpioC() as Forward;
     components new Msp430GpioC() as Backward;
-	ShellDemoP.Boot -> MainC.Boot;
+	DirectionP.Boot -> MainC.Boot;
 
 	components IPStackC;
 	components UDPShellC;
 	components RPLRoutingC;
 	components StaticIPAddressTosIdC;
 
-	ShellDemoP.RadioControl -> IPStackC;
+	DirectionP.RadioControl -> IPStackC;
 
-    ShellDemoP.Forward -> Forward;
-    ShellDemoP.Backward -> Backward;
+    DirectionP.Forward -> Forward;
+    DirectionP.Backward -> Backward;
 
     Forward -> HplMsp430GeneralIOC.Port26;
     Backward -> HplMsp430GeneralIOC.Port23;
 
 	components new ShellCommandC("forward") as ForwardCmd;
-	ShellDemoP.ForwardCmd -> ForwardCmd;
+	DirectionP.ForwardCmd -> ForwardCmd;
 	components new ShellCommandC("backward") as BackwardCmd;
-	ShellDemoP.BackwardCmd -> BackwardCmd;
+	DirectionP.BackwardCmd -> BackwardCmd;
 	components new ShellCommandC("stop") as StopCmd;
-	ShellDemoP.StopCmd -> StopCmd;
+	DirectionP.StopCmd -> StopCmd;
 
 #ifdef PRINTFUART_ENABLED
   /* This component wires printf directly to the serial port, and does

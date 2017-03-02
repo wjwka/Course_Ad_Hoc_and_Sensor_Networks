@@ -9,7 +9,7 @@ def init_webserver():
 
 @app.route('/', methods=['GET', 'POST'])
 def set_threshold():
-    threshold_value = request.form['text']
+    threshold_value = int(request.form['text'])
     print "new threshold received: "
     print threshold_value
     return render_template('control.html')

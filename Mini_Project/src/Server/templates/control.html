@@ -49,31 +49,39 @@
         </style>
         <body>
         <table cellpadding="0" cellspacing="0" border="0">
-        <tr>
-            <td></td>
-            <td><form action="{{  url_for('ctrl_wheels') }}" method=post>
-                <button  name="dir" value="up" class="buttonUp"></button>
-                </form></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td width="40"><form action="{{  url_for('ctrl_wheels') }}" method=post>
-                <button  name="dir" value="up" class="buttonLeft"></button>
-                </form></td>
-            <td  width="65" ><form action="{{  url_for('ctrl_wheels') }}" method=post>
-                <button  name="dir" value="up" class="buttonCircle"></button>
-                </form></td>
-            <td><form action="{{  url_for('ctrl_wheels') }}" method=post>
-                <button  name="dir" value="up" class="buttonRight"></button>
-                </form></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td><form action="{{  url_for('ctrl_wheels') }}" method=post>
-                <button  name="dir" value="up" class="buttonDown"></button>
-                </form></td>
-            <td></td>
-        </tr>
-        </table>
+            <form action="{{  url_for('ctrl_wheels') }}" method=post>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        <button  name="dir" value="forward" class="buttonUp"></button>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button  name="dir" value="left" class="buttonLeft"></button>
+                    </td>
+                    <td>
+                            <button  name="dir" value="stop" class="buttonCircle"></button>
+                    </td>
+                    <td>
+                            <button  name="dir" value="right" class="buttonRight"></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <button  name="dir" value="backward" class="buttonDown"></button>
+                    </td>
+                    <td></td>
+                </tr>
+            </form>
+            </table>
+            <form action="{{url_for('set_threshold')}}" method="POST">
+                <input type="text" name="text">
+                <input type="submit" name="my-form" value="set TH">
+            </form>
     </body>
 </html>

@@ -7,6 +7,13 @@ app = Flask(__name__)
 def init_webserver():
     return render_template('control.html')
 
+@app.route('/', methods=['GET', 'POST'])
+def set_threshold():
+    threshold_value = request.form['text']
+    print "new threshold received: "
+    print threshold_value
+    return render_template('control.html')
+
 @app.route('/ctrl', methods=['GET','POST'])
 def ctrl_wheels():
     if(request.method == 'POST'):

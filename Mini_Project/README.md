@@ -1,5 +1,5 @@
 # Introduction
-Our project implements a smart sensing car through which we can get data from sensors remotely. 
+Our project implements a smart sensing car through which we can control the car and get data from sensors on the car remotely.
 
 ## Hardware
 2. 4\*TELOSB
@@ -8,11 +8,6 @@ Our project implements a smart sensing car through which we can get data from se
 # Software(Operating Systems)
 1. TinyOS
 2. Flask
-
-# Technique
-2. Flask
-4. Sensing methods in TinyOS
-3. GPIO library in Raspbian
 3. html/css
 
 ## Scenario:
@@ -26,7 +21,7 @@ Our project implements a smart sensing car through which we can get data from se
 4. Zhiwei Liu
 
 # Structure
-This part shows the basic structure of this project and how to run the it. 
+This part shows the basic structure of this project.
 
 There are 4 parts in this project: *PppRouter*, *Direction*, *Sensing*, *Server*.
 
@@ -52,4 +47,4 @@ This part is responsible for controlling direction. There are 2 subparts:
 This part is mainly used for sensing data through the sensors. And those data will be visualized on a webpage(localhost:5000/dada) when starting flask server. Similarly to the Direction part, there is also a high-level interface being implemented(also written in python).
 
 ## Server
-Set up a flask server to visualize the controller page and the sensed data. Web page UIs are mainly implemented in this part under statics/ and templates/ directories. At the same time, the server could directly use and call the interfaces which have been implemented in the **Direction** nd **Sensing** parts. 
+Set up a flask server to visualize the controller page and the sensed data. Web page UIs are mainly implemented in this part under statics/ and templates/ directories. At the same time, the server could directly use and call the interfaces which have been implemented in the **Direction** and **Sensing** parts.

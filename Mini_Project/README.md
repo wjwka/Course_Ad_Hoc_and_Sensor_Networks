@@ -48,3 +48,7 @@ This part is mainly used for sensing data through the sensors. And those data wi
 
 ## Server
 Set up a flask server to visualize the controller page and the sensed data. Web page UIs are mainly implemented in this part under statics/ and templates/ directories. At the same time, the server could directly use and call the interfaces which have been implemented in the **Direction** and **Sensing** parts.
+
+The visualized data will be shown like following:
+![streaming light](./streaming_light.png)
+![streaming humidity](./streaming_humidity.png)
